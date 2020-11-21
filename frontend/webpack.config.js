@@ -14,9 +14,9 @@ var config = {
     libraryTarget: "var",
   },
 
-  optimization: {
-    minimize: false,
-  },
+  // optimization: {
+  //   minimize: false,
+  // },
 };
 
 module.exports = config;

@@ -5,7 +5,7 @@
   "homepage": "https://dbgate.org/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dbshell/dbgate.git"
+    "url": "https://github.com/dbshell/dbgate-plugin-csv.git"
   },
   "funding": "https://www.paypal.com/paypalme/JanProchazkaCz/30eur",
   "author": "Jan Prochazka",
@@ -27,5 +27,8 @@
   "devDependencies": {
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
+  },
+  "org_dbgate": {
+    "icon": "https://github.com/dbshell/dbgate-plugin-csv/blob/master/icon.svg"
   }
 }
