@@ -1,0 +1,31 @@
+{
+  "name": "dbgate-plugin-csv",
+  "main": "lib/backend.js",
+  "version": "1.0.0",
+  "homepage": "https://dbgate.org/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dbshell/dbgate.git"
+  },
+  "funding": "https://www.paypal.com/paypalme/JanProchazkaCz/30eur",
+  "author": "Jan Prochazka",
+  "license": "GPL",
+  "keywords": [
+    "sql",
+    "csv",
+    "import",
+    "export",
+    "dbgate",
+    "dbgateplugin"
+  ],
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "cd frontend && yarn build && cd ../backend && yarn build"
+  },
+  "devDependencies": {
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
