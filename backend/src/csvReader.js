@@ -43,7 +43,7 @@ async function csvReader({ fileName, encoding = 'utf-8', header = true, delimite
     // @ts-ignore
     delimiter,
     skip_lines_with_error: true,
-    to_line: limitRows ? limitRows + 1 : -1,
+    to_line: limitRows ? limitRows + 1 : undefined,
   });
   const fileStream = fs.createReadStream(fileName, encoding);
   const csvPrepare = new CsvPrepareStream({ header });

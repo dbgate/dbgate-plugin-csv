@@ -2,8 +2,8 @@ const csvFormat = {
   storageType: 'csv',
   extension: 'csv',
   name: 'CSV',
-  readerFunc: 'csvReader',
-  writerFunc: 'csvWriter',
+  readerFunc: 'csvReader@dbgate-plugin-csv',
+  writerFunc: 'csvWriter@dbgate-plugin-csv',
   args: [
     {
       type: 'select',

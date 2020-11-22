@@ -1,8 +1,9 @@
 {
   "name": "dbgate-plugin-csv",
   "main": "lib/backend.js",
-  "version": "1.0.0",
-  "homepage": "https://dbgate.org/",
+  "version": "1.0.3",
+  "homepage": "https://github.com/dbshell/dbgate-plugin-csv",
+  "description": "CSV import/export plugin for DbGate",
   "repository": {
     "type": "git",
     "url": "https://github.com/dbshell/dbgate-plugin-csv.git"
@@ -27,8 +28,5 @@
   "devDependencies": {
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
-  },
-  "org_dbgate": {
-    "icon": "https://github.com/dbshell/dbgate-plugin-csv/blob/master/icon.svg"
   }
 }
