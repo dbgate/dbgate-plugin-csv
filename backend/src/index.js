@@ -6,4 +6,5 @@ module.exports = {
     csvWriter,
     csvReader,
   },
+  packageName: 'dbgate-plugin-csv',
 };
