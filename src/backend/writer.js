@@ -22,7 +22,7 @@ class CsvPrepareStream extends stream.Transform {
   }
 }
 
-async function csvWriter({ fileName, encoding = 'utf-8', header = true, delimiter, quoted }) {
+async function writer({ fileName, encoding = 'utf-8', header = true, delimiter, quoted }) {
   console.log(`Writing file ${fileName}`);
   const csvPrepare = new CsvPrepareStream({ header });
   const csvStream = csv.stringify({ delimiter, quoted });
@@ -33,4 +33,4 @@ async function csvWriter({ fileName, encoding = 'utf-8', header = true, delimite
   return csvPrepare;
 }
 
-module.exports = csvWriter;
+module.exports = writer;

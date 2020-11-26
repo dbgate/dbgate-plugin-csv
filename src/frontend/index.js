@@ -1,9 +1,16 @@
-const csvFormat = {
+const fileFormat = {
+  packageName: 'dbgate-plugin-csv',
+  // file format identifier
   storageType: 'csv',
+  // file extension without leading dot
   extension: 'csv',
+  // human readable file format name
   name: 'CSV',
-  readerFunc: 'csvReader@dbgate-plugin-csv',
-  writerFunc: 'csvWriter@dbgate-plugin-csv',
+  // function name from backend, which contains reader factory, postfixed by package name
+  readerFunc: 'reader@dbgate-plugin-csv',
+  // function name from backend, which contains writer factory, postfixed by package name
+  writerFunc: 'writer@dbgate-plugin-csv',
+  // optional list of format arguments, which can be edited from UI
   args: [
     {
       type: 'select',
@@ -35,5 +42,5 @@ const csvFormat = {
 };
 
 export default {
-  fileFormats: [csvFormat],
+  fileFormats: [fileFormat],
 };
