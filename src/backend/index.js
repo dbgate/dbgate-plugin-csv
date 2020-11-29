@@ -7,4 +7,7 @@ module.exports = {
     reader,
     writer,
   },
+  initialize(dbgateEnv) {
+    reader.initialize(dbgateEnv);
+  },
 };

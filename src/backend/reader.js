@@ -3,6 +3,7 @@ const csv = require('csv');
 const fs = require('fs');
 const stream = require('stream');
 
+let dbgateApi;
 class CsvPrepareStream extends stream.Transform {
   constructor({ header }) {
     super({ objectMode: true });
@@ -45,11 +46,16 @@ async function reader({ fileName, encoding = 'utf-8', header = true, delimiter, 
     skip_lines_with_error: true,
     to_line: limitRows ? limitRows + 1 : undefined,
   });
-  const fileStream = fs.createReadStream(fileName, encoding);
+  const downloadedFile = await dbgateApi.download(fileName);
+  const fileStream = fs.createReadStream(downloadedFile, encoding);
   const csvPrepare = new CsvPrepareStream({ header });
   fileStream.pipe(csvStream);
   csvStream.pipe(csvPrepare);
   return csvPrepare;
 }
+
+reader.initialize = (dbgateEnv) => {
+  dbgateApi = dbgateEnv.dbgateApi;
+};
 
 module.exports = reader;
