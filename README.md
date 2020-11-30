@@ -20,8 +20,9 @@ dbgateApi.registerPlugins(dbgatePluginCsv);
 
 async function run() {
   const reader = await dbgateApi.fakeObjectReader();
-  const writer = await dbgateApi.consoleObjectWriter();
-  await dbgatePluginCsv.shellApi.writer({ fileName: '~/myfile1.csv', separator: ';' });
+  const writer = await dbgatePluginCsv.shellApi.writer({ fileName: 'myfile1.csv', separator: ';' });
+  await dbgateApi.copyStream(reader, writer);
+  
   console.log('Finished job script');
 }
 dbgateApi.runScript(run);
@@ -34,8 +35,9 @@ dbgateApi.runScript(run);
 ### shellApi.reader
 Reads CSV file
 ```js
-  const reader = await dbgateApi.csvReader({
-    fileName: '/home/root/test.csv',
+  const dbgatePluginCsv = require("dbgate-plugin-csv");
+  const reader = await dbgatePluginCsv.shellApi.reader({
+    fileName: 'test.csv',
     encoding: 'utf-8',
     header: true,
     delimiter: ',',
@@ -47,8 +49,9 @@ Reads CSV file
 ### shellApi.writer
 Writes CSV file
 ```js
-  const reader = await dbgateApi.csvWriter({
-    fileName: '/home/root/test.csv',
+  const dbgatePluginCsv = require("dbgate-plugin-csv");
+  const writer = await dbgatePluginCsv.shellApi.writer({
+    fileName: 'test.csv',
     encoding: 'utf-8',
     header: true,
     delimiter: ',',
