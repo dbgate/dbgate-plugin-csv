@@ -2,11 +2,11 @@
   "name": "dbgate-plugin-csv",
   "main": "dist/backend.js",
   "version": "1.0.8",
-  "homepage": "https://github.com/dbshell/dbgate-plugin-csv",
+  "homepage": "https://github.com/dbgate/dbgate-plugin-csv",
   "description": "CSV import/export plugin for DbGate",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dbshell/dbgate-plugin-csv.git"
+    "url": "https://github.com/dbgate/dbgate-plugin-csv.git"
   },
   "funding": "https://www.paypal.com/paypalme/JanProchazkaCz/30eur",
   "author": "Jan Prochazka",
