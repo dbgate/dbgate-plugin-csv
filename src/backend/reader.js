@@ -21,10 +21,16 @@ class CsvPrepareStream extends stream.Transform {
       done();
     } else {
       if (this.header) {
-        this.structure = { columns: chunk.map((columnName) => ({ columnName })) };
+        this.structure = {
+          __isStreamHeader: true,
+          columns: chunk.map((columnName) => ({ columnName })),
+        };
         this.push(this.structure);
       } else {
-        this.structure = { columns: chunk.map((value, index) => ({ columnName: `col${index + 1}` })) };
+        this.structure = {
+          __isStreamHeader: true,
+          columns: chunk.map((value, index) => ({ columnName: `col${index + 1}` })),
+        };
         this.push(this.structure);
         this.push(
           zipObject(
